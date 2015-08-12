@@ -2,9 +2,7 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.jcuda</groupId>
     <artifactId>jcuda-main</artifactId>
-    <version>0.7.0b-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <parent>
@@ -22,4 +20,77 @@
         <module>../JCusparse/JCusparseJava</module>
         <module>../JCusolver/JCusolverJava</module>
     </modules>
+
+    <!-- Copy the JARs of all modules to the jcuda-main/target directory -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.10</version>
+                <executions>
+                    <execution>
+                        <id>copy</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcuda</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcublas</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcufft</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcusparse</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcurand</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcusolver</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>

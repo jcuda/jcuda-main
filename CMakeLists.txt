@@ -32,9 +32,9 @@ add_subdirectory(
     ${CMAKE_CURRENT_SOURCE_DIR}/../JCusparse/JCusparseJNI
     ${CMAKE_CURRENT_BINARY_DIR}/JCusparse/JCusparseJNI/bin)
     
-#if(JCUDA_CUDA_VERSION VERSION_GREATER "6.5")    
-#    add_subdirectory(
-#        ${CMAKE_CURRENT_SOURCE_DIR}/../JCusolver/JCusolverJNI
-#        ${CMAKE_CURRENT_BINARY_DIR}/JCusolver/JCusolverJNI/bin)
-#endif()    
+if(JCUDA_CUDA_VERSION VERSION_GREATER "6.5")    
+    add_subdirectory(
+        ${CMAKE_CURRENT_SOURCE_DIR}/../JCusolver/JCusolverJNI
+        ${CMAKE_CURRENT_BINARY_DIR}/JCusolver/JCusolverJNI/bin)
+endif()    
 
