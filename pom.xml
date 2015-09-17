@@ -8,7 +8,7 @@
     <parent>
         <groupId>org.jcuda</groupId>
         <artifactId>jcuda-parent</artifactId>
-        <version>0.7.0b-SNAPSHOT</version>
+        <version>0.7.5</version>
         <relativePath>../jcuda-common/JCudaParentPOM/pom.xml</relativePath>
     </parent>
 
@@ -38,7 +38,7 @@
                         </goals>
                         <configuration>
                             <artifactItems>
-                            
+
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
                                     <artifactId>jcuda</artifactId>
@@ -47,7 +47,7 @@
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${project.build.directory}</outputDirectory>
                                 </artifactItem>
-                                
+
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
                                     <artifactId>jcublas</artifactId>
@@ -56,7 +56,7 @@
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${project.build.directory}</outputDirectory>
                                 </artifactItem>
-                                
+
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
                                     <artifactId>jcufft</artifactId>
@@ -65,7 +65,7 @@
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${project.build.directory}</outputDirectory>
                                 </artifactItem>
-                                
+
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
                                     <artifactId>jcusparse</artifactId>
@@ -74,7 +74,7 @@
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${project.build.directory}</outputDirectory>
                                 </artifactItem>
-                                
+
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
                                     <artifactId>jcurand</artifactId>
@@ -83,7 +83,7 @@
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${project.build.directory}</outputDirectory>
                                 </artifactItem>
-                                
+
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
                                     <artifactId>jcusolver</artifactId>
@@ -92,11 +92,11 @@
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${project.build.directory}</outputDirectory>
                                 </artifactItem>
-                                
+
                             </artifactItems>
                         </configuration>
                     </execution>
-                    
+
                     <!-- Copy the native libraries of all modules to the jcuda-main build directory -->
                     <execution>
                         <phase>generate-resources</phase>
@@ -105,7 +105,7 @@
                         </goals>
                         <configuration>
                             <artifactItems>
-                            
+
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
                                     <artifactId>jcuda</artifactId>
@@ -116,7 +116,7 @@
                                     <destFileName>JCudaRuntime-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</destFileName>
                                     <overWrite>true</overWrite>
                                 </artifactItem>
-                            
+
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
                                     <artifactId>jcuda</artifactId>
@@ -127,7 +127,7 @@
                                     <destFileName>JCudaDriver-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</destFileName>
                                     <overWrite>true</overWrite>
                                 </artifactItem>
-                            
+
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
                                     <artifactId>jcublas</artifactId>
@@ -136,6 +136,17 @@
                                     <classifier>JCublas-nativeLibrary</classifier>
                                     <outputDirectory>${project.build.directory}</outputDirectory>
                                     <destFileName>JCublas-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</destFileName>
+                                    <overWrite>true</overWrite>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcublas</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>${jcuda.ext}</type>
+                                    <classifier>JCublas2-nativeLibrary</classifier>
+                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                    <destFileName>JCublas2-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</destFileName>
                                     <overWrite>true</overWrite>
                                 </artifactItem>
 
@@ -183,11 +194,11 @@
                                     <overWrite>true</overWrite>
                                 </artifactItem>
 
-                                
+
                             </artifactItems>
                         </configuration>
                     </execution>
-                    
+
                 </executions>
             </plugin>
 
