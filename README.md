@@ -24,6 +24,18 @@ The [jcuda-common](https://github.com/jcuda/jcuda-common) project contains
 additional build- and source files that are required by all libraries.
 
 
+Pre-built binaries and Maven support 
+------------------
+
+Pre-built binaries are available at the 
+[JCuda downloads page](http://www.jcuda.org/downloads/downloads.html).
+
+Konstantin Perikov is maintaining 
+[Mavenized JCuda](https://github.com/MysterionRise/mavenized-jcuda),
+which offers the JCuda binaries as Maven artifacts.  
+
+
+
 Build instructions
 ------------------
 
