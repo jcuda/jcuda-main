@@ -50,8 +50,28 @@
 
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
+                                    <artifactId>jcuda</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>natives</classifier>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
                                     <artifactId>jcublas</artifactId>
                                     <version>${project.version}</version>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcublas</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>natives</classifier>
                                     <type>jar</type>
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${project.build.directory}</outputDirectory>
@@ -68,132 +88,80 @@
 
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
-                                    <artifactId>jcusparse</artifactId>
-                                    <version>${project.version}</version>
-                                    <type>jar</type>
-                                    <overWrite>true</overWrite>
-                                    <outputDirectory>${project.build.directory}</outputDirectory>
-                                </artifactItem>
-
-                                <artifactItem>
-                                    <groupId>org.jcuda</groupId>
-                                    <artifactId>jcurand</artifactId>
-                                    <version>${project.version}</version>
-                                    <type>jar</type>
-                                    <overWrite>true</overWrite>
-                                    <outputDirectory>${project.build.directory}</outputDirectory>
-                                </artifactItem>
-
-                                <artifactItem>
-                                    <groupId>org.jcuda</groupId>
-                                    <artifactId>jcusolver</artifactId>
-                                    <version>${project.version}</version>
-                                    <type>jar</type>
-                                    <overWrite>true</overWrite>
-                                    <outputDirectory>${project.build.directory}</outputDirectory>
-                                </artifactItem>
-
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-
-                    <!-- Copy the native libraries of all modules to the jcuda-main build directory -->
-                    <execution>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>copy</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-
-                                <artifactItem>
-                                    <groupId>org.jcuda</groupId>
-                                    <artifactId>jcuda</artifactId>
-                                    <version>${project.version}</version>
-                                    <type>${jcuda.ext}</type>
-                                    <classifier>JCudaRuntime-nativeLibrary</classifier>
-                                    <outputDirectory>${project.build.directory}</outputDirectory>
-                                    <destFileName>JCudaRuntime-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</destFileName>
-                                    <overWrite>true</overWrite>
-                                </artifactItem>
-
-                                <artifactItem>
-                                    <groupId>org.jcuda</groupId>
-                                    <artifactId>jcuda</artifactId>
-                                    <version>${project.version}</version>
-                                    <type>${jcuda.ext}</type>
-                                    <classifier>JCudaDriver-nativeLibrary</classifier>
-                                    <outputDirectory>${project.build.directory}</outputDirectory>
-                                    <destFileName>JCudaDriver-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</destFileName>
-                                    <overWrite>true</overWrite>
-                                </artifactItem>
-
-                                <artifactItem>
-                                    <groupId>org.jcuda</groupId>
-                                    <artifactId>jcublas</artifactId>
-                                    <version>${project.version}</version>
-                                    <type>${jcuda.ext}</type>
-                                    <classifier>JCublas-nativeLibrary</classifier>
-                                    <outputDirectory>${project.build.directory}</outputDirectory>
-                                    <destFileName>JCublas-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</destFileName>
-                                    <overWrite>true</overWrite>
-                                </artifactItem>
-
-                                <artifactItem>
-                                    <groupId>org.jcuda</groupId>
-                                    <artifactId>jcublas</artifactId>
-                                    <version>${project.version}</version>
-                                    <type>${jcuda.ext}</type>
-                                    <classifier>JCublas2-nativeLibrary</classifier>
-                                    <outputDirectory>${project.build.directory}</outputDirectory>
-                                    <destFileName>JCublas2-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</destFileName>
-                                    <overWrite>true</overWrite>
-                                </artifactItem>
-
-                                <artifactItem>
-                                    <groupId>org.jcuda</groupId>
                                     <artifactId>jcufft</artifactId>
                                     <version>${project.version}</version>
-                                    <type>${jcuda.ext}</type>
-                                    <classifier>JCufft-nativeLibrary</classifier>
-                                    <outputDirectory>${project.build.directory}</outputDirectory>
-                                    <destFileName>JCufft-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</destFileName>
+                                    <classifier>natives</classifier>
+                                    <type>jar</type>
                                     <overWrite>true</overWrite>
+                                    <outputDirectory>${project.build.directory}</outputDirectory>
                                 </artifactItem>
 
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
                                     <artifactId>jcusparse</artifactId>
                                     <version>${project.version}</version>
-                                    <type>${jcuda.ext}</type>
-                                    <classifier>JCusparse-nativeLibrary</classifier>
-                                    <outputDirectory>${project.build.directory}</outputDirectory>
-                                    <destFileName>JCusparse-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</destFileName>
+                                    <classifier>natives</classifier>
+                                    <type>jar</type>
                                     <overWrite>true</overWrite>
+                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcusparse</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcusparse</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>natives</classifier>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${project.build.directory}</outputDirectory>
                                 </artifactItem>
 
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
                                     <artifactId>jcurand</artifactId>
                                     <version>${project.version}</version>
-                                    <type>${jcuda.ext}</type>
-                                    <classifier>JCurand-nativeLibrary</classifier>
-                                    <outputDirectory>${project.build.directory}</outputDirectory>
-                                    <destFileName>JCurand-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</destFileName>
+                                    <type>jar</type>
                                     <overWrite>true</overWrite>
+                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcurand</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>natives</classifier>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${project.build.directory}</outputDirectory>
                                 </artifactItem>
 
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
                                     <artifactId>jcusolver</artifactId>
                                     <version>${project.version}</version>
-                                    <type>${jcuda.ext}</type>
-                                    <classifier>JCusolver-nativeLibrary</classifier>
-                                    <outputDirectory>${project.build.directory}</outputDirectory>
-                                    <destFileName>JCusolver-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</destFileName>
+                                    <type>jar</type>
                                     <overWrite>true</overWrite>
+                                    <outputDirectory>${project.build.directory}</outputDirectory>
                                 </artifactItem>
 
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcusolver</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>natives</classifier>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                </artifactItem>
 
                             </artifactItems>
                         </configuration>
@@ -202,6 +170,40 @@
                 </executions>
             </plugin>
 
+            <!-- Copy the native libraries of all modules to the jcuda-main build directory -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.4.3</version>
+
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${jcuda.libDir}</directory>
+                                    <includes>
+                                        <include>*.dll</include>
+                                        <include>*.dylib</include>
+                                        <include>*.so</include>
+                                    </includes>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+        
+                </executions>
+            </plugin>
 
         </plugins>
     </build>

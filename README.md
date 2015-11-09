@@ -38,25 +38,51 @@ which offers the JCuda binaries as Maven artifacts.
 
 Build instructions
 ------------------
+ 
+In order to build all JCuda libraries, create a local working directory,
+`C:\JCuda`, and clone all repositories into this directory: 
 
-The core JCuda libraries (JCuda, JCublas, JCufft, JCurand and JCusolver)
-are summarized in this `jcuda-main` project. It contains build files that
-refer to the individual sub-projects. When these projects and the
-[jcuda-common](https://github.com/jcuda/jcuda-common) project are located 
-in a local working directory, the build process is as follows:
+    git clone https://github.com/jcuda/jcuda-common.git
+    git clone https://github.com/jcuda/jcuda-main.git
+    git clone https://github.com/jcuda/jcuda.git
+    git clone https://github.com/jcuda/jcublas.git
+    git clone https://github.com/jcuda/jcufft.git
+    git clone https://github.com/jcuda/jcusparse.git
+    git clone https://github.com/jcuda/jcurand.git
+    git clone https://github.com/jcuda/jcusolver.git
 
-* Run [CMake](http://www.cmake.org/), using the `CMakeLists.txt` from
-the `jcuda-main` project as an input. Generate the build files in an
-arbitrary output directory (for example, `jcuda-main-build`). Compiling
-these build files with the chosen native compiler will cause the native
-libraries (DLL, SO or DYLIB files) to be placed in a subdirectory of 
-the working directory, called `nativeLibraries`.
 
-* Run [Apache Maven](https://maven.apache.org/) using the `pom.xml` from
-the `jcuda-main` project as an input. Invoking `mvn clean package` will 
-compile the Java libraries, run the unit tests, assemble the binaries,
-sources and JavaDocs into JAR files, and finally place all libraries
-into the `jcuda-main/target` directory.
+**Building the native libraries**
+
+The native libraries of JCuda can be built with [CMake](http://www.cmake.org/)
+and any compatible target compiler (e.g. Visual Studio or GCC):
+
+* Start `cmake-gui`,
+* Set the directory containing the sources of the `jcuda-main` project, e.g. `C:\JCuda\jcuda-main`
+* Set the directory for the build files: e.g. `C:\JCuda.build`
+* Press "Configure" (and select the appropriate compiler)
+* Press "Generate"
+
+Then, `C:\JCuda.build` will contain the build files, e.g. the
+GCC makefiles or the Visual Studio project files. Compiling the
+with these makefiles will place the binaries into a `nativeLibraries`
+subdirectory of the `jcuda-main` project, e.g. into 
+`C:\JCuda\jcuda-main\nativeLibraries`.
+
+
+**Building the Java libraries**
+
+The actual Java libraries can be built with 
+[Apache Maven](https://maven.apache.org/). After the native libraries
+have been built into the `jcuda-main\nativeLibraries`
+directory as described above, change into the `jcuda-main` directory
+and execute 
+
+    mvn clean package
+
+This will compile the Java libraries, run the unit tests, assemble the 
+classes, native libraries, sources and JavaDocs into JAR files, and 
+finally place all libraries into the `jcuda-main/target` directory.
 
 
 
