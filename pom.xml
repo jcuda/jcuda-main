@@ -21,7 +21,7 @@
         <module>../jcublas/JCublasJNI</module>
         <module>../jcublas/JCublas2JNI</module>
         <module>../jcublas/JCublasJava</module>
-        
+
         <module>../jcufft/JCufftJNI</module>
         <module>../jcufft/JCufftJava</module>
         
@@ -33,6 +33,7 @@
 
         <module>../jcusolver/JCusolverJNI</module>
         <module>../jcusolver/JCusolverJava</module>
+
     </modules>
 
     <build>
@@ -64,7 +65,8 @@
 
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
-                                    <artifactId>JCudaRuntime-${jcuda.os}-${jcuda.arch}</artifactId>
+                                    <artifactId>JCudaRuntime-native</artifactId>
+                                    <classifier>${jcuda.os}-${jcuda.arch}</classifier>
                                     <version>${project.version}</version>
                                     <type>${jcuda.ext}</type>
                                     <overWrite>true</overWrite>
@@ -74,7 +76,8 @@
 
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
-                                    <artifactId>JCudaDriver-${jcuda.os}-${jcuda.arch}</artifactId>
+                                    <artifactId>JCudaDriver-native</artifactId>
+                                    <classifier>${jcuda.os}-${jcuda.arch}</classifier>
                                     <version>${project.version}</version>
                                     <type>${jcuda.ext}</type>
                                     <overWrite>true</overWrite>
@@ -94,7 +97,8 @@
 
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
-                                    <artifactId>JCublas-${jcuda.os}-${jcuda.arch}</artifactId>
+                                    <artifactId>JCublas-native</artifactId>
+                                    <classifier>${jcuda.os}-${jcuda.arch}</classifier>
                                     <version>${project.version}</version>
                                     <type>${jcuda.ext}</type>
                                     <overWrite>true</overWrite>
@@ -104,7 +108,8 @@
 
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
-                                    <artifactId>JCublas2-${jcuda.os}-${jcuda.arch}</artifactId>
+                                    <artifactId>JCublas2-native</artifactId>
+                                    <classifier>${jcuda.os}-${jcuda.arch}</classifier>
                                     <version>${project.version}</version>
                                     <type>${jcuda.ext}</type>
                                     <overWrite>true</overWrite>
@@ -125,7 +130,8 @@
                                 
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
-                                    <artifactId>JCufft-${jcuda.os}-${jcuda.arch}</artifactId>
+                                    <artifactId>JCufft-native</artifactId>
+                                    <classifier>${jcuda.os}-${jcuda.arch}</classifier>
                                     <version>${project.version}</version>
                                     <type>${jcuda.ext}</type>
                                     <overWrite>true</overWrite>
@@ -145,7 +151,8 @@
 
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
-                                    <artifactId>JCusparse-${jcuda.os}-${jcuda.arch}</artifactId>
+                                    <artifactId>JCusparse-native</artifactId>
+                                    <classifier>${jcuda.os}-${jcuda.arch}</classifier>
                                     <version>${project.version}</version>
                                     <type>${jcuda.ext}</type>
                                     <overWrite>true</overWrite>
@@ -166,7 +173,8 @@
                                 
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
-                                    <artifactId>JCurand-${jcuda.os}-${jcuda.arch}</artifactId>
+                                    <artifactId>JCurand-native</artifactId>
+                                    <classifier>${jcuda.os}-${jcuda.arch}</classifier>
                                     <version>${project.version}</version>
                                     <type>${jcuda.ext}</type>
                                     <overWrite>true</overWrite>
@@ -187,7 +195,8 @@
                                 
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
-                                    <artifactId>JCusolver-${jcuda.os}-${jcuda.arch}</artifactId>
+                                    <artifactId>JCusolver-native</artifactId>
+                                    <classifier>${jcuda.os}-${jcuda.arch}</classifier>
                                     <version>${project.version}</version>
                                     <type>${jcuda.ext}</type>
                                     <overWrite>true</overWrite>
