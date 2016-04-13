@@ -17,6 +17,9 @@
         <module>../jcuda/JCudaRuntimeJNI</module>
         <module>../jcuda/JCudaDriverJNI</module>
         <module>../jcuda/JCudaJava</module>
+		
+		<module>../jnvrtc/JNvrtcJNI</module>
+		<module>../jnvrtc/JNvrtc</module>
 
         <module>../jcublas/JCublasJNI</module>
         <module>../jcublas/JCublas2JNI</module>
@@ -84,9 +87,28 @@
                                     <outputDirectory>${project.build.directory}</outputDirectory>
                                     <destFileName>${jcuda.prefix}JCudaDriver-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</destFileName>
                                 </artifactItem>
-
+								
+								<artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jnvrtc</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                </artifactItem>
 
                                 <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>JNvrtc-native</artifactId>
+                                    <classifier>${jcuda.os}-${jcuda.arch}</classifier>
+                                    <version>${project.version}</version>
+                                    <type>${jcuda.ext}</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                    <destFileName>${jcuda.prefix}JNvrtc-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</destFileName>
+                                </artifactItem>
+
+                               <artifactItem>
                                     <groupId>org.jcuda</groupId>
                                     <artifactId>jcublas</artifactId>
                                     <version>${project.version}</version>
