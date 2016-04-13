@@ -15,8 +15,8 @@ add_subdirectory(
     ${CMAKE_CURRENT_BINARY_DIR}/jcuda/JCudaRuntimeJNI/bin)
 
 add_subdirectory(
-    ${CMAKE_CURRENT_SOURCE_DIR}/../jcuda/JNvrtcJNI
-    ${CMAKE_CURRENT_BINARY_DIR}/jcuda/JNvrtcJNI/bin)
+    ${CMAKE_CURRENT_SOURCE_DIR}/../jnvrtc/JNvrtcJNI
+    ${CMAKE_CURRENT_BINARY_DIR}/jnvrtc/JNvrtcJNI/bin)
     
 add_subdirectory(
     ${CMAKE_CURRENT_SOURCE_DIR}/../jcublas/JCublasJNI
