@@ -18,8 +18,7 @@
         <module>../jcuda/JCudaDriverJNI</module>
         <module>../jcuda/JCudaJava</module>
 		
-		<module>../jnvrtc/JNvrtcJNI</module>
-		<module>../jnvrtc/JNvrtc</module>
+		<module>../jcuda/JNvrtcJNI</module>
 
         <module>../jcublas/JCublasJNI</module>
         <module>../jcublas/JCublas2JNI</module>
@@ -86,15 +85,6 @@
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${project.build.directory}</outputDirectory>
                                     <destFileName>${jcuda.prefix}JCudaDriver-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</destFileName>
-                                </artifactItem>
-								
-								<artifactItem>
-                                    <groupId>org.jcuda</groupId>
-                                    <artifactId>jnvrtc</artifactId>
-                                    <version>${project.version}</version>
-                                    <type>jar</type>
-                                    <overWrite>true</overWrite>
-                                    <outputDirectory>${project.build.directory}</outputDirectory>
                                 </artifactItem>
 
                                 <artifactItem>
