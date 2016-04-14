@@ -13,6 +13,10 @@ add_subdirectory(
 add_subdirectory(
     ${CMAKE_CURRENT_SOURCE_DIR}/../jcuda/JCudaRuntimeJNI
     ${CMAKE_CURRENT_BINARY_DIR}/jcuda/JCudaRuntimeJNI/bin)
+
+add_subdirectory(
+    ${CMAKE_CURRENT_SOURCE_DIR}/../jcuda/JNvrtcJNI
+    ${CMAKE_CURRENT_BINARY_DIR}/jcuda/JNvrtcJNI/bin)
     
 add_subdirectory(
     ${CMAKE_CURRENT_SOURCE_DIR}/../jcublas/JCublasJNI
@@ -34,9 +38,7 @@ add_subdirectory(
     ${CMAKE_CURRENT_SOURCE_DIR}/../jcusparse/JCusparseJNI
     ${CMAKE_CURRENT_BINARY_DIR}/jcusparse/JCusparseJNI/bin)
     
-if(JCUDA_CUDA_VERSION VERSION_GREATER "6.5")    
-    add_subdirectory(
-        ${CMAKE_CURRENT_SOURCE_DIR}/../jcusolver/JCusolverJNI
-        ${CMAKE_CURRENT_BINARY_DIR}/jcusolver/JCusolverJNI/bin)
-endif()    
+add_subdirectory(
+    ${CMAKE_CURRENT_SOURCE_DIR}/../jcusolver/JCusolverJNI
+    ${CMAKE_CURRENT_BINARY_DIR}/jcusolver/JCusolverJNI/bin)
 
