@@ -88,7 +88,7 @@
 
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
-                                    <artifactId>JCudaDriver-native</artifactId>
+                                    <artifactId>JNvrtc-native</artifactId>
                                     <classifier>${jcuda.os}-${jcuda.arch}</classifier>
                                     <version>${project.version}</version>
                                     <type>${jcuda.ext}</type>
