@@ -107,10 +107,28 @@ done
 cmake ./jcuda-main
 make all
 cd jcuda-main
-JAVA_HOME="/usr/lib/jvm/java-8-openjdk-$(arch)" mvn clean install
+
+case "$(arch)" in 
+	"x86_64" | "amd64" ) 
+		JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64" mvn clean install
+	;;
+	"ppc64le" | "ppc64el" )
+		JAVA_HOME="/usr/lib/jvm/java-8-openjdk-ppc64el" mvn clean install
+	;;
+	* )
+		echo "Your architecture is not supported yet, but you can do this!"
+		echo "find your JDK path and type : "
+		echo "JAVA_HOME=/path/to/java mvn clean install"
+	;;
+esac
 ```
 
 Notes: 
+
+Some of the software pieces needed here are cutting edge, and packaging is not necessarily supported or provided
+by the standard distributions. You'll have to build them from source, or use some personal repositories. 
+The below examples have been tested at the time of this writing, and are provided as-is, without any 
+guarantees. Feel free to add, change, update this based on your own experience. 
 
 * On Ubuntu 16.04, OpenJDK 8 is the default
 * On Ubuntu 14.04, do 
