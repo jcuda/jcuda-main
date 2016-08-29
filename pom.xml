@@ -8,31 +8,28 @@
     <parent>
         <groupId>org.jcuda</groupId>
         <artifactId>jcuda-parent</artifactId>
-        <version>0.7.5b</version>
+        <version>0.7.5c</version>
         <relativePath>../jcuda-common/JCudaParentPOM/pom.xml</relativePath>
     </parent>
 
     <modules>
 
-        <module>../jcuda/JCudaRuntimeJNI</module>
-        <module>../jcuda/JCudaDriverJNI</module>
-        <module>../jcuda/JNvrtcJNI</module>
+        <module>../jcuda</module>
         <module>../jcuda/JCudaJava</module>
 
-        <module>../jcublas/JCublasJNI</module>
-        <module>../jcublas/JCublas2JNI</module>
+        <module>../jcublas</module>
         <module>../jcublas/JCublasJava</module>
 
-        <module>../jcufft/JCufftJNI</module>
+        <module>../jcufft</module>
         <module>../jcufft/JCufftJava</module>
 
-        <module>../jcurand/JCurandJNI</module>
+        <module>../jcurand</module>
         <module>../jcurand/JCurandJava</module>
 
-        <module>../jcusparse/JCusparseJNI</module>
+        <module>../jcusparse</module>
         <module>../jcusparse/JCusparseJava</module>
 
-        <module>../jcusolver/JCusolverJNI</module>
+        <module>../jcusolver</module>
         <module>../jcusolver/JCusolverJava</module>
 
     </modules>
@@ -66,35 +63,11 @@
 
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
-                                    <artifactId>JCudaRuntime-native</artifactId>
+                                    <artifactId>jcuda-natives</artifactId>
                                     <classifier>${jcuda.os}-${jcuda.arch}</classifier>
                                     <version>${project.version}</version>
-                                    <type>${jcuda.ext}</type>
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${project.build.directory}</outputDirectory>
-                                    <destFileName>${jcuda.prefix}JCudaRuntime-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</destFileName>
-                                </artifactItem>
-
-                                <artifactItem>
-                                    <groupId>org.jcuda</groupId>
-                                    <artifactId>JCudaDriver-native</artifactId>
-                                    <classifier>${jcuda.os}-${jcuda.arch}</classifier>
-                                    <version>${project.version}</version>
-                                    <type>${jcuda.ext}</type>
-                                    <overWrite>true</overWrite>
-                                    <outputDirectory>${project.build.directory}</outputDirectory>
-                                    <destFileName>${jcuda.prefix}JCudaDriver-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</destFileName>
-                                </artifactItem>
-
-                                <artifactItem>
-                                    <groupId>org.jcuda</groupId>
-                                    <artifactId>JNvrtc-native</artifactId>
-                                    <classifier>${jcuda.os}-${jcuda.arch}</classifier>
-                                    <version>${project.version}</version>
-                                    <type>${jcuda.ext}</type>
-                                    <overWrite>true</overWrite>
-                                    <outputDirectory>${project.build.directory}</outputDirectory>
-                                    <destFileName>${jcuda.prefix}JNvrtc-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</destFileName>
                                 </artifactItem>
 
 
@@ -109,24 +82,11 @@
 
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
-                                    <artifactId>JCublas-native</artifactId>
+                                    <artifactId>jcublas-natives</artifactId>
                                     <classifier>${jcuda.os}-${jcuda.arch}</classifier>
                                     <version>${project.version}</version>
-                                    <type>${jcuda.ext}</type>
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${project.build.directory}</outputDirectory>
-                                    <destFileName>${jcuda.prefix}JCublas-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</destFileName>
-                                </artifactItem>
-
-                                <artifactItem>
-                                    <groupId>org.jcuda</groupId>
-                                    <artifactId>JCublas2-native</artifactId>
-                                    <classifier>${jcuda.os}-${jcuda.arch}</classifier>
-                                    <version>${project.version}</version>
-                                    <type>${jcuda.ext}</type>
-                                    <overWrite>true</overWrite>
-                                    <outputDirectory>${project.build.directory}</outputDirectory>
-                                    <destFileName>${jcuda.prefix}JCublas2-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</destFileName>
                                 </artifactItem>
 
 
@@ -142,13 +102,11 @@
 
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
-                                    <artifactId>JCufft-native</artifactId>
+                                    <artifactId>jcufft-natives</artifactId>
                                     <classifier>${jcuda.os}-${jcuda.arch}</classifier>
                                     <version>${project.version}</version>
-                                    <type>${jcuda.ext}</type>
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${project.build.directory}</outputDirectory>
-                                    <destFileName>${jcuda.prefix}JCufft-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</destFileName>
                                 </artifactItem>
 
 
@@ -163,13 +121,11 @@
 
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
-                                    <artifactId>JCusparse-native</artifactId>
+                                    <artifactId>jcusparse-natives</artifactId>
                                     <classifier>${jcuda.os}-${jcuda.arch}</classifier>
                                     <version>${project.version}</version>
-                                    <type>${jcuda.ext}</type>
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${project.build.directory}</outputDirectory>
-                                    <destFileName>${jcuda.prefix}JCusparse-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</destFileName>
                                 </artifactItem>
 
 
@@ -185,13 +141,11 @@
 
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
-                                    <artifactId>JCurand-native</artifactId>
+                                    <artifactId>jcurand-natives</artifactId>
                                     <classifier>${jcuda.os}-${jcuda.arch}</classifier>
                                     <version>${project.version}</version>
-                                    <type>${jcuda.ext}</type>
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${project.build.directory}</outputDirectory>
-                                    <destFileName>${jcuda.prefix}JCurand-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</destFileName>
                                 </artifactItem>
 
 
@@ -207,13 +161,11 @@
 
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
-                                    <artifactId>JCusolver-native</artifactId>
+                                    <artifactId>jcusolver-natives</artifactId>
                                     <classifier>${jcuda.os}-${jcuda.arch}</classifier>
                                     <version>${project.version}</version>
-                                    <type>${jcuda.ext}</type>
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${project.build.directory}</outputDirectory>
-                                    <destFileName>${jcuda.prefix}JCusolver-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</destFileName>
                                 </artifactItem>
 
                             </artifactItems>
@@ -225,6 +177,5 @@
 
         </plugins>
     </build>
-
 
 </project>
