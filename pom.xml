@@ -8,11 +8,13 @@
     <parent>
         <groupId>org.jcuda</groupId>
         <artifactId>jcuda-parent</artifactId>
-        <version>0.7.5c</version>
+        <version>0.8.0RC</version>
         <relativePath>../jcuda-common/JCudaParentPOM/pom.xml</relativePath>
     </parent>
 
     <modules>
+
+        <module>../jcuda-common/JCudaParentPOM</module>
 
         <module>../jcuda</module>
         <module>../jcuda/JCudaJava</module>
