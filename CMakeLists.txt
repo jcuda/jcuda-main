@@ -42,3 +42,7 @@ add_subdirectory(
     ${CMAKE_CURRENT_SOURCE_DIR}/../jcusolver/JCusolverJNI
     ${CMAKE_CURRENT_BINARY_DIR}/jcusolver/JCusolverJNI/bin)
 
+add_subdirectory(
+    ${CMAKE_CURRENT_SOURCE_DIR}/../jnvgraph/JNvgraphJNI
+    ${CMAKE_CURRENT_BINARY_DIR}/jnvgraph/JNvgraphJNI/bin)
+
