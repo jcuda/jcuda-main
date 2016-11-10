@@ -34,6 +34,9 @@
         <module>../jcusolver</module>
         <module>../jcusolver/JCusolverJava</module>
 
+        <module>../jnvgraph</module>
+        <module>../jnvgraph/JNvgraphJava</module>
+
     </modules>
 
     <build>
@@ -151,7 +154,6 @@
                                 </artifactItem>
 
 
-
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
                                     <artifactId>jcusolver</artifactId>
@@ -169,6 +171,27 @@
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${project.build.directory}</outputDirectory>
                                 </artifactItem>
+
+
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jnvgraph</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jnvgraph-natives</artifactId>
+                                    <classifier>${jcuda.os}-${jcuda.arch}</classifier>
+                                    <version>${project.version}</version>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                </artifactItem>
+
 
                             </artifactItems>
                         </configuration>
