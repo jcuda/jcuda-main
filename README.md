@@ -16,6 +16,7 @@ required for compiling and using all other libraries.
 * [JCurand](https://github.com/jcuda/jcurand) -- Java bindings for CURAND
 * [JCusparse](https://github.com/jcuda/jcusparse) -- Java bindings for CUSPARSE
 * [JCusolver](https://github.com/jcuda/jcusolver) -- Java bindings for CUSOLVER
+* [JNvgraph](https://github.com/jcuda/jnvgraph) -- Java bindings for nvGRAPH
 
 Each of these projects contains the source code for the native libraries
 (DLL, SO, or DYLIB) and for the Java libraries (JAR). 
@@ -51,6 +52,7 @@ In order to build all JCuda libraries, create a local working directory,
     git clone https://github.com/jcuda/jcusparse.git
     git clone https://github.com/jcuda/jcurand.git
     git clone https://github.com/jcuda/jcusolver.git
+    git clone https://github.com/jcuda/jnvgraph.git
 
 
 **Building the native libraries**
