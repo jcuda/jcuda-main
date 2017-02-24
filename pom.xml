@@ -2,19 +2,20 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>jcuda-main</artifactId>
-    <packaging>pom</packaging>
-
     <parent>
         <groupId>org.jcuda</groupId>
         <artifactId>jcuda-parent</artifactId>
         <version>0.8.0</version>
-        <relativePath>../jcuda-common/JCudaParentPOM/pom.xml</relativePath>
+        <relativePath></relativePath>
     </parent>
+
+    <artifactId>jcuda-main</artifactId>
+    <packaging>pom</packaging>
 
     <modules>
 
-        <module>../jcuda-common/JCudaParentPOM</module>
+        <module>../jcuda-parent</module>
+        <module>../jcuda-common</module>
 
         <module>../jcuda</module>
         <module>../jcuda/JCudaJava</module>
@@ -36,7 +37,10 @@
 
         <module>../jnvgraph</module>
         <module>../jnvgraph/JNvgraphJava</module>
-
+<!--
+        <module>../jcudnn</module>
+        <module>../jcudnn/JCudnnJava</module>
+-->
     </modules>
 
     <build>
@@ -57,24 +61,145 @@
                         <configuration>
                             <artifactItems>
 
+                                <!-- jcuda-common -->
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcuda-common</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>pom</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcuda-common</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcuda-common</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>sources</classifier>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcuda-common</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>javadoc</classifier>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+
+                                <!-- jcuda -->
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcuda</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>pom</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
                                     <artifactId>jcuda</artifactId>
                                     <version>${project.version}</version>
                                     <type>jar</type>
                                     <overWrite>true</overWrite>
-                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcuda</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>sources</classifier>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcuda</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>javadoc</classifier>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+
+                                <!-- jcuda-natives -->
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcuda-natives</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>pom</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
                                 </artifactItem>
 
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
                                     <artifactId>jcuda-natives</artifactId>
-                                    <classifier>${jcuda.os}-${jcuda.arch}</classifier>
                                     <version>${project.version}</version>
                                     <overWrite>true</overWrite>
-                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
                                 </artifactItem>
 
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcuda-natives</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>${jcuda.os}-${jcuda.arch}</classifier>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcuda-natives</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>sources</classifier>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcuda-natives</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>javadoc</classifier>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+
+                                <!-- jcublas -->
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcublas</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>pom</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
 
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
@@ -82,19 +207,87 @@
                                     <version>${project.version}</version>
                                     <type>jar</type>
                                     <overWrite>true</overWrite>
-                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcublas</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>sources</classifier>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcublas</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>javadoc</classifier>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+
+                                <!-- jcublas-natives -->
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcublas-natives</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>pom</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
                                 </artifactItem>
 
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
                                     <artifactId>jcublas-natives</artifactId>
-                                    <classifier>${jcuda.os}-${jcuda.arch}</classifier>
                                     <version>${project.version}</version>
                                     <overWrite>true</overWrite>
-                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcublas-natives</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>${jcuda.os}-${jcuda.arch}</classifier>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcublas-natives</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>sources</classifier>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcublas-natives</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>javadoc</classifier>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
                                 </artifactItem>
 
 
+                                <!-- jcufft -->
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcufft</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>pom</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
 
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
@@ -102,38 +295,87 @@
                                     <version>${project.version}</version>
                                     <type>jar</type>
                                     <overWrite>true</overWrite>
-                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcufft</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>sources</classifier>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcufft</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>javadoc</classifier>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+
+                                <!-- jcufft-natives -->
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcufft-natives</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>pom</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
                                 </artifactItem>
 
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
                                     <artifactId>jcufft-natives</artifactId>
-                                    <classifier>${jcuda.os}-${jcuda.arch}</classifier>
                                     <version>${project.version}</version>
                                     <overWrite>true</overWrite>
-                                    <outputDirectory>${project.build.directory}</outputDirectory>
-                                </artifactItem>
-
-
-                                <artifactItem>
-                                    <groupId>org.jcuda</groupId>
-                                    <artifactId>jcusparse</artifactId>
-                                    <version>${project.version}</version>
-                                    <type>jar</type>
-                                    <overWrite>true</overWrite>
-                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
                                 </artifactItem>
 
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
-                                    <artifactId>jcusparse-natives</artifactId>
-                                    <classifier>${jcuda.os}-${jcuda.arch}</classifier>
+                                    <artifactId>jcufft-natives</artifactId>
                                     <version>${project.version}</version>
+                                    <classifier>${jcuda.os}-${jcuda.arch}</classifier>
                                     <overWrite>true</overWrite>
-                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcufft-natives</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>sources</classifier>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcufft-natives</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>javadoc</classifier>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
                                 </artifactItem>
 
 
+                                <!-- jcurand -->
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcurand</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>pom</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
 
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
@@ -141,18 +383,175 @@
                                     <version>${project.version}</version>
                                     <type>jar</type>
                                     <overWrite>true</overWrite>
-                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcurand</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>sources</classifier>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcurand</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>javadoc</classifier>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+
+                                <!-- jcurand-natives -->
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcurand-natives</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>pom</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
                                 </artifactItem>
 
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
                                     <artifactId>jcurand-natives</artifactId>
-                                    <classifier>${jcuda.os}-${jcuda.arch}</classifier>
                                     <version>${project.version}</version>
                                     <overWrite>true</overWrite>
-                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
                                 </artifactItem>
 
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcurand-natives</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>${jcuda.os}-${jcuda.arch}</classifier>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcurand-natives</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>sources</classifier>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcurand-natives</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>javadoc</classifier>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+
+                                <!-- jcusparse -->
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcusparse</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>pom</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcusparse</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcusparse</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>sources</classifier>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcusparse</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>javadoc</classifier>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+
+                                <!-- jcusparse-natives -->
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcusparse-natives</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>pom</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcusparse-natives</artifactId>
+                                    <version>${project.version}</version>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcusparse-natives</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>${jcuda.os}-${jcuda.arch}</classifier>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcusparse-natives</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>sources</classifier>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcusparse-natives</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>javadoc</classifier>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+
+                                <!-- jcusolver -->
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcusolver</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>pom</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
 
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
@@ -160,19 +559,87 @@
                                     <version>${project.version}</version>
                                     <type>jar</type>
                                     <overWrite>true</overWrite>
-                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcusolver</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>sources</classifier>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcusolver</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>javadoc</classifier>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+
+                                <!-- jcusolver-natives -->
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcusolver-natives</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>pom</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
                                 </artifactItem>
 
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
                                     <artifactId>jcusolver-natives</artifactId>
-                                    <classifier>${jcuda.os}-${jcuda.arch}</classifier>
                                     <version>${project.version}</version>
                                     <overWrite>true</overWrite>
-                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcusolver-natives</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>${jcuda.os}-${jcuda.arch}</classifier>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcusolver-natives</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>sources</classifier>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcusolver-natives</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>javadoc</classifier>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
                                 </artifactItem>
 
 
+                                <!-- jnvgraph -->
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jnvgraph</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>pom</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
 
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
@@ -180,19 +647,164 @@
                                     <version>${project.version}</version>
                                     <type>jar</type>
                                     <overWrite>true</overWrite>
-                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jnvgraph</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>sources</classifier>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jnvgraph</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>javadoc</classifier>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+
+                                <!-- jnvgraph-natives -->
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jnvgraph-natives</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>pom</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
                                 </artifactItem>
 
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
                                     <artifactId>jnvgraph-natives</artifactId>
-                                    <classifier>${jcuda.os}-${jcuda.arch}</classifier>
                                     <version>${project.version}</version>
                                     <overWrite>true</overWrite>
-                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jnvgraph-natives</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>${jcuda.os}-${jcuda.arch}</classifier>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jnvgraph-natives</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>sources</classifier>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jnvgraph-natives</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>javadoc</classifier>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
                                 </artifactItem>
 
 
+                                <!-- jcudnn -->
+<!--
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcudnn</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>pom</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcudnn</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcudnn</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>sources</classifier>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcudnn</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>javadoc</classifier>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+-->
+
+                                <!-- jcudnn-natives -->
+<!--
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcudnn-natives</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>pom</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcudnn-natives</artifactId>
+                                    <version>${project.version}</version>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcudnn-natives</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>${jcuda.os}-${jcuda.arch}</classifier>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcudnn-natives</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>sources</classifier>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcudnn-natives</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>javadoc</classifier>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+-->
                             </artifactItems>
                         </configuration>
                     </execution>

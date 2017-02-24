@@ -42,6 +42,7 @@ Build instructions
 In order to build all JCuda libraries, create a local working directory,
 `C:\JCuda`, and clone all repositories into this directory: 
 
+    git clone https://github.com/jcuda/jcuda-parent.git
     git clone https://github.com/jcuda/jcuda-common.git
     git clone https://github.com/jcuda/jcuda-main.git
     git clone https://github.com/jcuda/jcuda.git
@@ -74,7 +75,11 @@ subdirectory of the respective project, e.g. into
 
 The Java libraries can be built with [Apache Maven](https://maven.apache.org/).
 After the native libraries have been built as described above, change into 
-the `jcuda-main` directory and execute 
+the `jcuda-parent` directory and execute 
+
+    mvn clean install
+    
+Then change into the `jcuda-main` directory and execute 
 
     mvn clean install
 
@@ -82,7 +87,7 @@ This will create the JAR files that contain the native libraries, compile
 the Java classes, run the unit tests, assemble the classes, sources and 
 JavaDocs into JAR files, and finally place all libraries, together with 
 the JAR files that contain the native libraries, into the 
-`jcuda-main/target` directory.
+`jcuda-main/output` directory.
 
 
 Short building script
