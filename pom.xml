@@ -61,6 +61,18 @@
                         <configuration>
                             <artifactItems>
 
+                                <!-- jcuda-parent -->
+
+                                <artifactItem>
+                                    <groupId>org.jcuda</groupId>
+                                    <artifactId>jcuda-parent</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>pom</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${basedir}/output</outputDirectory>
+                                </artifactItem>
+
+
                                 <!-- jcuda-common -->
 
                                 <artifactItem>
