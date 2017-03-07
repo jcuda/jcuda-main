@@ -28,13 +28,56 @@ additional build- and source files that are required by all libraries.
 Pre-built binaries and Maven support 
 ------------------
 
-Pre-built binaries are available at the 
-[JCuda downloads page](http://www.jcuda.org/downloads/downloads.html).
+Since version 0.8.0, JCuda is available in Maven Central:
 
-Konstantin Perikov is maintaining 
+    <dependency>
+        <groupId>org.jcuda</groupId>
+        <artifactId>jcuda</artifactId>
+        <version>0.8.0</version>
+    </dependency>
+    <dependency>
+        <groupId>org.jcuda</groupId>
+        <artifactId>jcublas</artifactId>
+        <version>0.8.0</version>
+    </dependency>
+    <dependency>
+        <groupId>org.jcuda</groupId>
+        <artifactId>jcufft</artifactId>
+        <version>0.8.0</version>
+    </dependency>
+    <dependency>
+        <groupId>org.jcuda</groupId>
+        <artifactId>jcusparse</artifactId>
+        <version>0.8.0</version>
+    </dependency>
+    <dependency>
+        <groupId>org.jcuda</groupId>
+        <artifactId>jcusolver</artifactId>
+        <version>0.8.0</version>
+    </dependency>
+    <dependency>
+        <groupId>org.jcuda</groupId>
+        <artifactId>jcurand</artifactId>
+        <version>0.8.0</version>
+    </dependency>
+    <dependency>
+        <groupId>org.jcuda</groupId>
+        <artifactId>jnvgraph</artifactId>
+        <version>0.8.0</version>
+    </dependency>
+    <dependency>
+        <groupId>org.jcuda</groupId>
+        <artifactId>jcudnn</artifactId>
+        <version>0.8.0</version>
+    </dependency>
+
+
+For earlier versions of JCuda, Konstantin Perikov is maintaining 
 [Mavenized JCuda](https://github.com/MysterionRise/mavenized-jcuda),
 which offers the JCuda binaries as Maven artifacts.  
 
+Pre-built binaries are available at the 
+[JCuda downloads page](http://www.jcuda.org/downloads/downloads.html).
 
 
 Build instructions
