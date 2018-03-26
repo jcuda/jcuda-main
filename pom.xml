@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.jcuda</groupId>
         <artifactId>jcuda-parent</artifactId>
-        <version>0.9.0</version>
+        <version>0.9.0b</version>
         <relativePath></relativePath>
     </parent>
 
@@ -37,10 +37,10 @@
 
         <module>../jnvgraph</module>
         <module>../jnvgraph/JNvgraphJava</module>
-<!--
+
         <module>../jcudnn</module>
         <module>../jcudnn/JCudnnJava</module>
--->
+
     </modules>
 
     <build>
@@ -731,7 +731,7 @@
 
 
                                 <!-- jcudnn -->
-<!--
+
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
                                     <artifactId>jcudnn</artifactId>
@@ -769,10 +769,10 @@
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${basedir}/output</outputDirectory>
                                 </artifactItem>
--->
+
 
                                 <!-- jcudnn-natives -->
-<!--
+
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
                                     <artifactId>jcudnn-natives</artifactId>
@@ -816,7 +816,7 @@
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${basedir}/output</outputDirectory>
                                 </artifactItem>
--->
+
                             </artifactItems>
                         </configuration>
                     </execution>
