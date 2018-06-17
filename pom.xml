@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.jcuda</groupId>
         <artifactId>jcuda-parent</artifactId>
-        <version>0.9.1</version>
+        <version>0.9.2</version>
         <relativePath></relativePath>
     </parent>
 
@@ -45,6 +45,39 @@
 
     <build>
         <plugins>
+
+            <!--
+              Delete the temp files for the current version. (If new natives
+              are compiled, these should be picked up during the tests,
+              instead of using the libraries that had been unpacked to
+              the temp-directory before)
+            -->
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>${java.io.tmpdir}</directory>
+                            <includes>
+                                <include>${jcuda.prefix}JCublas-${project.version}-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</include>
+                                <include>${jcuda.prefix}JCublas2-${project.version}-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</include>
+                                <include>${jcuda.prefix}JCudaDriver-${project.version}-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</include>
+                                <include>${jcuda.prefix}JCudaRuntime-${project.version}-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</include>
+                                <include>${jcuda.prefix}JNvrtc-${project.version}-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</include>
+                                <include>${jcuda.prefix}JCufft-${project.version}-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</include>
+                                <include>${jcuda.prefix}JCurand-${project.version}-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</include>
+                                <include>${jcuda.prefix}JCusparse-${project.version}-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</include>
+                                <include>${jcuda.prefix}JCusolver-${project.version}-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</include>
+                                <include>${jcuda.prefix}JNvgraph-${project.version}-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</include>
+                                <include>${jcuda.prefix}JCudnn-${project.version}-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</include>
+                            </includes>
+                            <followSymlinks>false</followSymlinks>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
