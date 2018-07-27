@@ -22,42 +22,42 @@ JCuda in your Maven project, just add the necessary dependencies to your
     <dependency>
         <groupId>org.jcuda</groupId>
         <artifactId>jcuda</artifactId>
-        <version>0.9.0d</version>
+        <version>0.9.2</version>
     </dependency>
     <dependency>
         <groupId>org.jcuda</groupId>
         <artifactId>jcublas</artifactId>
-        <version>0.9.0d</version>
+        <version>0.9.2</version>
     </dependency>
     <dependency>
         <groupId>org.jcuda</groupId>
         <artifactId>jcufft</artifactId>
-        <version>0.9.0d</version>
+        <version>0.9.2</version>
     </dependency>
     <dependency>
         <groupId>org.jcuda</groupId>
         <artifactId>jcusparse</artifactId>
-        <version>0.9.0d</version>
+        <version>0.9.2</version>
     </dependency>
     <dependency>
         <groupId>org.jcuda</groupId>
         <artifactId>jcusolver</artifactId>
-        <version>0.9.0d</version>
+        <version>0.9.2</version>
     </dependency>
     <dependency>
         <groupId>org.jcuda</groupId>
         <artifactId>jcurand</artifactId>
-        <version>0.9.0d</version>
+        <version>0.9.2</version>
     </dependency>
     <dependency>
         <groupId>org.jcuda</groupId>
         <artifactId>jnvgraph</artifactId>
-        <version>0.9.0d</version>
+        <version>0.9.2</version>
     </dependency>
     <dependency>
         <groupId>org.jcuda</groupId>
         <artifactId>jcudnn</artifactId>
-        <version>0.9.0d</version>
+        <version>0.9.2</version>
     </dependency>
 
 The `jcuda` dependency contains the core library and is required
@@ -98,7 +98,7 @@ Thanks to [evbarnett](https://github.com/evbarnett) and
     // native libaries. For example, when the operating system is "windows" and the 
     // architecture is "x86_64", then the classifier will be "windows-x86_64", and thus,
     // the JAR file containing the native libraries will be
-    // jcuda-natives-windows-x86_64-0.9.0d.jar
+    // jcuda-natives-windows-x86_64-0.9.2.jar
     // These methods are taken from 
     // https://github.com/jcuda/jcuda/blob/master/JCudaJava/src/main/java/jcuda/LibUtils.java
     def static getOsString() {
@@ -161,13 +161,13 @@ Thanks to [evbarnett](https://github.com/evbarnett) and
         // you should set a global variable like so:
         //
         // ext {
-        //  jCudaVersion = "0.9.0d"
+        //  jCudaVersion = "0.9.2"
         // }
         //
         // In your *top level* build gradle, and use
         // rootProject.ext.jCudaVersion instead of jCudaVersion when you need to access it
 
-        def jCudaVersion = "0.9.0d"
+        def jCudaVersion = "0.9.2"
 
         // JCuda Java libraries
 
