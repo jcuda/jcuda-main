@@ -186,6 +186,15 @@ Thanks to [evbarnett](https://github.com/evbarnett) and
         compile(group: 'org.jcuda', name: 'jcurand', version: jCudaVersion) {
         transitive = false
         }
+        compile(group: 'org.jcuda', name: 'jcusolver', version: jCudaVersion) {
+        transitive = false
+        }
+        compile(group: 'org.jcuda', name: 'jnvgraph', version: jCudaVersion) {
+        transitive = false
+        }
+        compile(group: 'org.jcuda', name: 'jcudnn', version: jCudaVersion) {
+        transitive = false
+        }
 
         // JCuda native libraries
 
@@ -198,6 +207,12 @@ Thanks to [evbarnett](https://github.com/evbarnett) and
         compile group: 'org.jcuda', name: 'jcusparse-natives',
             classifier: classifier, version: jCudaVersion
         compile group: 'org.jcuda', name: 'jcurand-natives',
+            classifier: classifier, version: jCudaVersion
+        compile group: 'org.jcuda', name: 'jcusolver-natives',
+            classifier: classifier, version: jCudaVersion
+        compile group: 'org.jcuda', name: 'jnvgraph-natives',
+            classifier: classifier, version: jCudaVersion
+        compile group: 'org.jcuda', name: 'jcudnn-natives',
             classifier: classifier, version: jCudaVersion
     }
 

@@ -16,6 +16,7 @@ required for compiling and using all other libraries.
 * [JCusparse](https://github.com/jcuda/jcusparse) -- Java bindings for CUSPARSE
 * [JCusolver](https://github.com/jcuda/jcusolver) -- Java bindings for CUSOLVER
 * [JNvgraph](https://github.com/jcuda/jnvgraph) -- Java bindings for nvGRAPH
+* [JCudnn](https://github.com/jcuda/jcudnn) -- Java bindings for cuDNN
 
 Each of these projects contains the source code for the native libraries
 (DLL, SO, or DYLIB) and for the Java libraries (JAR). 
