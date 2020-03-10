@@ -84,14 +84,24 @@ This is a set of commands that will build the project, provided you're running o
 * a proper cmake as well
 
 ```
+RELEASE="version-10.0.0-RC01"
 [ -d ./jcuda ] || mkdir ./jcuda
 cd jcuda
-for project in jcuda-common jcuda-main jcuda jcublas jcufft jcusparse jcurand jcusolver
-do 
+for project in jcuda-main \
+               jcuda-parent \
+               jcuda-common \
+               jcuda jcublas \
+               jcufft \
+               jcusparse \
+               jcurand \
+               jcusolver \
+               jnvgraph \
+               jcudnn
+do
 	git clone https://github.com/jcuda/${project}.git
 	cd ${project}
-	git checkout tags/version-0.7.5b # This is optional, only if compiling on CUDA 0.7.5
-	cd /mnt/jcuda
+	git checkout tags/${RELEASE}
+	cd ..
 done
 cmake ./jcuda-main
 make all
