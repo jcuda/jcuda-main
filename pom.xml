@@ -34,14 +34,10 @@
 
         <module>../jcusolver</module>
         <module>../jcusolver/JCusolverJava</module>
-<!--
-        <module>../jnvgraph</module>
-        <module>../jnvgraph/JNvgraphJava</module>
--->        
-<!--
+
         <module>../jcudnn</module>
         <module>../jcudnn/JCudnnJava</module>
--->
+
     </modules>
 
     <build>
@@ -675,99 +671,8 @@
                                     <outputDirectory>${basedir}/output</outputDirectory>
                                 </artifactItem>
 
-
-                                <!-- jnvgraph -->
-<!--
-
-                                <artifactItem>
-                                    <groupId>org.jcuda</groupId>
-                                    <artifactId>jnvgraph</artifactId>
-                                    <version>${project.version}</version>
-                                    <type>pom</type>
-                                    <overWrite>true</overWrite>
-                                    <outputDirectory>${basedir}/output</outputDirectory>
-                                </artifactItem>
-
-                                <artifactItem>
-                                    <groupId>org.jcuda</groupId>
-                                    <artifactId>jnvgraph</artifactId>
-                                    <version>${project.version}</version>
-                                    <type>jar</type>
-                                    <overWrite>true</overWrite>
-                                    <outputDirectory>${basedir}/output</outputDirectory>
-                                </artifactItem>
-
-                                <artifactItem>
-                                    <groupId>org.jcuda</groupId>
-                                    <artifactId>jnvgraph</artifactId>
-                                    <version>${project.version}</version>
-                                    <classifier>sources</classifier>
-                                    <type>jar</type>
-                                    <overWrite>true</overWrite>
-                                    <outputDirectory>${basedir}/output</outputDirectory>
-                                </artifactItem>
-
-                                <artifactItem>
-                                    <groupId>org.jcuda</groupId>
-                                    <artifactId>jnvgraph</artifactId>
-                                    <version>${project.version}</version>
-                                    <classifier>javadoc</classifier>
-                                    <type>jar</type>
-                                    <overWrite>true</overWrite>
-                                    <outputDirectory>${basedir}/output</outputDirectory>
-                                </artifactItem>
--->
-
-                                <!-- jnvgraph-natives -->
-<!--
-
-                                <artifactItem>
-                                    <groupId>org.jcuda</groupId>
-                                    <artifactId>jnvgraph-natives</artifactId>
-                                    <version>${project.version}</version>
-                                    <type>pom</type>
-                                    <overWrite>true</overWrite>
-                                    <outputDirectory>${basedir}/output</outputDirectory>
-                                </artifactItem>
-
-                                <artifactItem>
-                                    <groupId>org.jcuda</groupId>
-                                    <artifactId>jnvgraph-natives</artifactId>
-                                    <version>${project.version}</version>
-                                    <overWrite>true</overWrite>
-                                    <outputDirectory>${basedir}/output</outputDirectory>
-                                </artifactItem>
-
-                                <artifactItem>
-                                    <groupId>org.jcuda</groupId>
-                                    <artifactId>jnvgraph-natives</artifactId>
-                                    <version>${project.version}</version>
-                                    <classifier>${jcuda.os}-${jcuda.arch}</classifier>
-                                    <overWrite>true</overWrite>
-                                    <outputDirectory>${basedir}/output</outputDirectory>
-                                </artifactItem>
-
-                                <artifactItem>
-                                    <groupId>org.jcuda</groupId>
-                                    <artifactId>jnvgraph-natives</artifactId>
-                                    <version>${project.version}</version>
-                                    <classifier>sources</classifier>
-                                    <overWrite>true</overWrite>
-                                    <outputDirectory>${basedir}/output</outputDirectory>
-                                </artifactItem>
-
-                                <artifactItem>
-                                    <groupId>org.jcuda</groupId>
-                                    <artifactId>jnvgraph-natives</artifactId>
-                                    <version>${project.version}</version>
-                                    <classifier>javadoc</classifier>
-                                    <overWrite>true</overWrite>
-                                    <outputDirectory>${basedir}/output</outputDirectory>
-                                </artifactItem>
--->
-
                                 <!-- jcudnn -->
-<!--
+
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
                                     <artifactId>jcudnn</artifactId>
@@ -806,10 +711,9 @@
                                     <outputDirectory>${basedir}/output</outputDirectory>
                                 </artifactItem>
 
--->
 
                                 <!-- jcudnn-natives -->
-<!--
+
                                 <artifactItem>
                                     <groupId>org.jcuda</groupId>
                                     <artifactId>jcudnn-natives</artifactId>
@@ -853,7 +757,7 @@
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${basedir}/output</outputDirectory>
                                 </artifactItem>
--->
+
                             </artifactItems>
                         </configuration>
                     </execution>
