@@ -18,7 +18,6 @@ In order to build all JCuda libraries, create a local working directory,
     git clone https://github.com/jcuda/jcusparse.git
     git clone https://github.com/jcuda/jcurand.git
     git clone https://github.com/jcuda/jcusolver.git
-    git clone https://github.com/jcuda/jnvgraph.git
     git clone https://github.com/jcuda/jcudnn.git
 
 The [jcuda-main](https://github.com/jcuda/jcuda-main) project summarizes
@@ -95,7 +94,6 @@ for project in jcuda-main \
                jcusparse \
                jcurand \
                jcusolver \
-               jnvgraph \
                jcudnn
 do
 	git clone https://github.com/jcuda/${project}.git
