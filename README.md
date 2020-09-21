@@ -15,7 +15,7 @@ required for compiling and using all other libraries.
 * [JCurand](https://github.com/jcuda/jcurand) -- Java bindings for CURAND
 * [JCusparse](https://github.com/jcuda/jcusparse) -- Java bindings for CUSPARSE
 * [JCusolver](https://github.com/jcuda/jcusolver) -- Java bindings for CUSOLVER
-* [JNvgraph](https://github.com/jcuda/jnvgraph) -- Java bindings for nvGRAPH
+* <strike>[JNvgraph](https://github.com/jcuda/jnvgraph) -- Java bindings for nvGRAPH</strike> Deprecated as of CUDA 11
 * [JCudnn](https://github.com/jcuda/jcudnn) -- Java bindings for cuDNN
 
 Each of these projects contains the source code for the native libraries

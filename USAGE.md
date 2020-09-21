@@ -22,42 +22,37 @@ JCuda in your Maven project, just add the necessary dependencies to your
     <dependency>
         <groupId>org.jcuda</groupId>
         <artifactId>jcuda</artifactId>
-        <version>10.1.0</version>
+        <version>11.0.0</version>
     </dependency>
     <dependency>
         <groupId>org.jcuda</groupId>
         <artifactId>jcublas</artifactId>
-        <version>10.1.0</version>
+        <version>11.0.0</version>
     </dependency>
     <dependency>
         <groupId>org.jcuda</groupId>
         <artifactId>jcufft</artifactId>
-        <version>10.1.0</version>
+        <version>11.0.0</version>
     </dependency>
     <dependency>
         <groupId>org.jcuda</groupId>
         <artifactId>jcusparse</artifactId>
-        <version>10.1.0</version>
+        <version>11.0.0</version>
     </dependency>
     <dependency>
         <groupId>org.jcuda</groupId>
         <artifactId>jcusolver</artifactId>
-        <version>10.1.0</version>
+        <version>11.0.0</version>
     </dependency>
     <dependency>
         <groupId>org.jcuda</groupId>
         <artifactId>jcurand</artifactId>
-        <version>10.1.0</version>
-    </dependency>
-    <dependency>
-        <groupId>org.jcuda</groupId>
-        <artifactId>jnvgraph</artifactId>
-        <version>10.1.0</version>
+        <version>11.0.0</version>
     </dependency>
     <dependency>
         <groupId>org.jcuda</groupId>
         <artifactId>jcudnn</artifactId>
-        <version>10.1.0</version>
+        <version>11.0.0</version>
     </dependency>
 
 The `jcuda` dependency contains the core library and is required
@@ -98,7 +93,7 @@ Thanks to [evbarnett](https://github.com/evbarnett) and
     // native libaries. For example, when the operating system is "windows" and the 
     // architecture is "x86_64", then the classifier will be "windows-x86_64", and thus,
     // the JAR file containing the native libraries will be
-    // jcuda-natives-windows-x86_64-10.1.0.jar
+    // jcuda-natives-windows-x86_64-11.0.0.jar
     // These methods are taken from 
     // https://github.com/jcuda/jcuda/blob/master/JCudaJava/src/main/java/jcuda/LibUtils.java
     def static getOsString() {
@@ -161,13 +156,13 @@ Thanks to [evbarnett](https://github.com/evbarnett) and
         // you should set a global variable like so:
         //
         // ext {
-        //  jCudaVersion = "10.1.0"
+        //  jCudaVersion = "11.0.0"
         // }
         //
         // In your *top level* build gradle, and use
         // rootProject.ext.jCudaVersion instead of jCudaVersion when you need to access it
 
-        def jCudaVersion = "10.1.0"
+        def jCudaVersion = "11.0.0"
 
         // JCuda Java libraries
 
@@ -189,9 +184,6 @@ Thanks to [evbarnett](https://github.com/evbarnett) and
         compile(group: 'org.jcuda', name: 'jcusolver', version: jCudaVersion) {
         transitive = false
         }
-        compile(group: 'org.jcuda', name: 'jnvgraph', version: jCudaVersion) {
-        transitive = false
-        }
         compile(group: 'org.jcuda', name: 'jcudnn', version: jCudaVersion) {
         transitive = false
         }
@@ -209,8 +201,6 @@ Thanks to [evbarnett](https://github.com/evbarnett) and
         compile group: 'org.jcuda', name: 'jcurand-natives',
             classifier: classifier, version: jCudaVersion
         compile group: 'org.jcuda', name: 'jcusolver-natives',
-            classifier: classifier, version: jCudaVersion
-        compile group: 'org.jcuda', name: 'jnvgraph-natives',
             classifier: classifier, version: jCudaVersion
         compile group: 'org.jcuda', name: 'jcudnn-natives',
             classifier: classifier, version: jCudaVersion
