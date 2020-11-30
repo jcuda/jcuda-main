@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.jcuda</groupId>
         <artifactId>jcuda-parent</artifactId>
-        <version>11.0.0</version>
+        <version>11.1.0</version>
         <relativePath></relativePath>
     </parent>
 
@@ -62,6 +62,7 @@
                                 <include>${jcuda.prefix}JCudaDriver-${project.version}-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</include>
                                 <include>${jcuda.prefix}JCudaRuntime-${project.version}-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</include>
                                 <include>${jcuda.prefix}JNvrtc-${project.version}-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</include>
+                                <include>${jcuda.prefix}JNvPTXCompiler-${project.version}-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</include>
                                 <include>${jcuda.prefix}JCufft-${project.version}-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</include>
                                 <include>${jcuda.prefix}JCurand-${project.version}-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</include>
                                 <include>${jcuda.prefix}JCusparse-${project.version}-${jcuda.os}-${jcuda.arch}.${jcuda.ext}</include>
