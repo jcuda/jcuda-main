@@ -22,37 +22,37 @@ JCuda in your Maven project, just add the necessary dependencies to your
     <dependency>
         <groupId>org.jcuda</groupId>
         <artifactId>jcuda</artifactId>
-        <version>11.0.0</version>
+        <version>11.2.0</version>
     </dependency>
     <dependency>
         <groupId>org.jcuda</groupId>
         <artifactId>jcublas</artifactId>
-        <version>11.0.0</version>
+        <version>11.2.0</version>
     </dependency>
     <dependency>
         <groupId>org.jcuda</groupId>
         <artifactId>jcufft</artifactId>
-        <version>11.0.0</version>
+        <version>11.2.0</version>
     </dependency>
     <dependency>
         <groupId>org.jcuda</groupId>
         <artifactId>jcusparse</artifactId>
-        <version>11.0.0</version>
+        <version>11.2.0</version>
     </dependency>
     <dependency>
         <groupId>org.jcuda</groupId>
         <artifactId>jcusolver</artifactId>
-        <version>11.0.0</version>
+        <version>11.2.0</version>
     </dependency>
     <dependency>
         <groupId>org.jcuda</groupId>
         <artifactId>jcurand</artifactId>
-        <version>11.0.0</version>
+        <version>11.2.0</version>
     </dependency>
     <dependency>
         <groupId>org.jcuda</groupId>
         <artifactId>jcudnn</artifactId>
-        <version>11.0.0</version>
+        <version>11.2.0</version>
     </dependency>
 
 The `jcuda` dependency contains the core library and is required
