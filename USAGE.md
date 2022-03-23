@@ -22,37 +22,37 @@ JCuda in your Maven project, just add the necessary dependencies to your
     <dependency>
         <groupId>org.jcuda</groupId>
         <artifactId>jcuda</artifactId>
-        <version>11.2.0</version>
+        <version>11.5.2</version>
     </dependency>
     <dependency>
         <groupId>org.jcuda</groupId>
         <artifactId>jcublas</artifactId>
-        <version>11.2.0</version>
+        <version>11.5.2</version>
     </dependency>
     <dependency>
         <groupId>org.jcuda</groupId>
         <artifactId>jcufft</artifactId>
-        <version>11.2.0</version>
+        <version>11.5.2</version>
     </dependency>
     <dependency>
         <groupId>org.jcuda</groupId>
         <artifactId>jcusparse</artifactId>
-        <version>11.2.0</version>
+        <version>11.5.2</version>
     </dependency>
     <dependency>
         <groupId>org.jcuda</groupId>
         <artifactId>jcusolver</artifactId>
-        <version>11.2.0</version>
+        <version>11.5.2</version>
     </dependency>
     <dependency>
         <groupId>org.jcuda</groupId>
         <artifactId>jcurand</artifactId>
-        <version>11.2.0</version>
+        <version>11.5.2</version>
     </dependency>
     <dependency>
         <groupId>org.jcuda</groupId>
         <artifactId>jcudnn</artifactId>
-        <version>11.2.0</version>
+        <version>11.5.2</version>
     </dependency>
 
 The `jcuda` dependency contains the core library and is required
@@ -90,11 +90,11 @@ Thanks to [evbarnett](https://github.com/evbarnett) and
 
     // Methods to determine the operating system (OS) and architecture (Arch) of the system.
     // These strings are used to determine the classifier of the artifact that contains the
-    // native libaries. For example, when the operating system is "windows" and the 
+    // native libaries. For example, when the operating system is "windows" and the
     // architecture is "x86_64", then the classifier will be "windows-x86_64", and thus,
     // the JAR file containing the native libraries will be
     // jcuda-natives-windows-x86_64-11.0.0.jar
-    // These methods are taken from 
+    // These methods are taken from
     // https://github.com/jcuda/jcuda/blob/master/JCudaJava/src/main/java/jcuda/LibUtils.java
     def static getOsString() {
         String vendor = System.getProperty("java.vendor");
@@ -144,7 +144,7 @@ Thanks to [evbarnett](https://github.com/evbarnett) and
     }
 
     dependencies {
-        compile fileTree(include: ['*.jar'], dir: 'libs')
+        implementation fileTree(include: ['*.jar'], dir: 'libs')
 
         // Add your other dependencies here:
 
@@ -152,7 +152,7 @@ Thanks to [evbarnett](https://github.com/evbarnett) and
 
         def classifier = getOsString() + "-" + getArchString()
 
-        // Set JCuda version here, or if multiple modules use JCuda, 
+        // Set JCuda version here, or if multiple modules use JCuda,
         // you should set a global variable like so:
         //
         // ext {
@@ -166,43 +166,43 @@ Thanks to [evbarnett](https://github.com/evbarnett) and
 
         // JCuda Java libraries
 
-        compile(group: 'org.jcuda', name: 'jcuda', version: jCudaVersion) {
+        implementation(group: 'org.jcuda', name: 'jcuda', version: jCudaVersion) {
         transitive = false
         }
-        compile(group: 'org.jcuda', name: 'jcublas', version: jCudaVersion) {
+        implementation(group: 'org.jcuda', name: 'jcublas', version: jCudaVersion) {
         transitive = false
         }
-        compile(group: 'org.jcuda', name: 'jcufft', version: jCudaVersion) {
+        implementation(group: 'org.jcuda', name: 'jcufft', version: jCudaVersion) {
         transitive = false
         }
-        compile(group: 'org.jcuda', name: 'jcusparse', version: jCudaVersion) {
+        implementation(group: 'org.jcuda', name: 'jcusparse', version: jCudaVersion) {
         transitive = false
         }
-        compile(group: 'org.jcuda', name: 'jcurand', version: jCudaVersion) {
+        implementation(group: 'org.jcuda', name: 'jcurand', version: jCudaVersion) {
         transitive = false
         }
-        compile(group: 'org.jcuda', name: 'jcusolver', version: jCudaVersion) {
+        implementation(group: 'org.jcuda', name: 'jcusolver', version: jCudaVersion) {
         transitive = false
         }
-        compile(group: 'org.jcuda', name: 'jcudnn', version: jCudaVersion) {
+        implementation(group: 'org.jcuda', name: 'jcudnn', version: jCudaVersion) {
         transitive = false
         }
 
         // JCuda native libraries
 
-        compile group: 'org.jcuda', name: 'jcuda-natives',
+        implementation group: 'org.jcuda', name: 'jcuda-natives',
             classifier: classifier, version: jCudaVersion
-        compile group: 'org.jcuda', name: 'jcublas-natives',
+        implementation group: 'org.jcuda', name: 'jcublas-natives',
             classifier: classifier, version: jCudaVersion
-        compile group: 'org.jcuda', name: 'jcufft-natives',
+        implementation group: 'org.jcuda', name: 'jcufft-natives',
             classifier: classifier, version: jCudaVersion
-        compile group: 'org.jcuda', name: 'jcusparse-natives',
+        implementation group: 'org.jcuda', name: 'jcusparse-natives',
             classifier: classifier, version: jCudaVersion
-        compile group: 'org.jcuda', name: 'jcurand-natives',
+        implementation group: 'org.jcuda', name: 'jcurand-natives',
             classifier: classifier, version: jCudaVersion
-        compile group: 'org.jcuda', name: 'jcusolver-natives',
+        implementation group: 'org.jcuda', name: 'jcusolver-natives',
             classifier: classifier, version: jCudaVersion
-        compile group: 'org.jcuda', name: 'jcudnn-natives',
+        implementation group: 'org.jcuda', name: 'jcudnn-natives',
             classifier: classifier, version: jCudaVersion
     }
 
